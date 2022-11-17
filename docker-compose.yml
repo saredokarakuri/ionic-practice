@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  ionic:
+    image: ionic:6.20
+    build: ./ionic-vue
+    command: ionic serve
+    ports:
+      - 8100:8100
+    volumes:
+      - ./ionic-vue:/usr/src/app
