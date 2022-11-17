@@ -9,3 +9,26 @@ services:
       - 8100:8100
     volumes:
       - ./ionic-vue:/usr/src/app
+
+  laravel:
+    image: laravel:8.83
+    build: ./laravel
+    ports:
+      - 8000:80
+    volumes:
+      - ./laravel:/var/www/html
+
+  maria:
+    image: mariadb:10.7
+    ports:
+      - 3306:3306
+    volumes:
+      - maria:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ionic
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+
+volumes:
+  maria:
