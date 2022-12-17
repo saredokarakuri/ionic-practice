@@ -6,7 +6,7 @@ services:
     build: ./ionic-vue
     command: ionic serve
     ports:
-      - 8100:8100
+      - 8000:8100
     volumes:
       - ./ionic-vue:/usr/src/app
 
@@ -14,7 +14,7 @@ services:
     image: laravel:8.83
     build: ./laravel
     ports:
-      - 8000:80
+      - 8001:80
     volumes:
       - ./laravel:/var/www/html
 

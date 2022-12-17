@@ -1,5 +1,5 @@
 <template>
-  <ion-button :data="data" @click="signin">sign in</ion-button>
+  <ion-button :data="data" @click="login">login</ion-button>
 </template>
 
 <script>
@@ -8,15 +8,14 @@ import { defineComponent } from 'vue';
 import { IonButton } from '@ionic/vue';
 
 export default defineComponent({
-  name: 'SigninButton',
+  name: 'LoginButton',
   components: { IonButton },
   props: ['data'],
   methods: {
-    signin () {
+    login () {
       axios.post(
-        process.env.VUE_APP_ROOT_API + "/signin",
+        process.env.VUE_APP_ROOT_API + "/login",
         {
-          name: this.data.name,
           email: this.data.email,
           password: this.data.password
         }

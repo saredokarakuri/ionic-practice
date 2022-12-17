@@ -12,6 +12,7 @@ import { IonInput, IonItem, IonLabel } from '@ionic/vue';
 export default defineComponent({
   name: 'InputName',
   components: { IonInput, IonItem, IonLabel },
+  emits: ['update'],
   data () {
     return {
       name: null
